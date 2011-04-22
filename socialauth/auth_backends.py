@@ -144,6 +144,9 @@ class OpenIdBackend:
             return None
 
 class LinkedInBackend:
+    supports_anonymous_user = False
+    supports_object_permissions = False
+
     """LinkedInBackend for authentication"""
     def authenticate(self, linkedin_access_token, user=None):
         linkedin = LinkedIn(LINKEDIN_CONSUMER_KEY, LINKEDIN_CONSUMER_SECRET)
@@ -182,6 +185,9 @@ class LinkedInBackend:
             return None
 
 class TwitterBackend:
+    supports_anonymous_user = False
+    supports_object_permissions = False
+
     """TwitterBackend for authentication"""
     def authenticate(self, twitter_access_token, user=None):
         '''
@@ -259,6 +265,9 @@ class TwitterBackend:
             return None
         
 class FacebookBackend:
+    supports_anonymous_user = False
+    supports_object_permissions = False
+
     def authenticate(self, request, user=None):
         cookie = facebook.get_user_from_cookie(request.COOKIES,
                                                FACEBOOK_APP_ID,

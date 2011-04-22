@@ -1,11 +1,14 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+{% load media %}
 {% block html_declare %}
 <html lang="en">
 {% endblock %}
 
 <head>
     <title>{% if user.is_authenticated %}Hello {{ user }}{% else %}Please login{% endif %}</title>
-    <link rel="stylesheet" type="text/css" media="screen"  href="{{ MEDIA_URL }}css/socialauth.css" />
+
+    {% include_media 'socialauth_main.css' %}
+    <!--  <link rel="stylesheet" type="text/css" media="screen"  href="{{ MEDIA_URL }}css/socialauth.css" /> -->
     {% block extra_head %}
     {% endblock %}
 </head>
