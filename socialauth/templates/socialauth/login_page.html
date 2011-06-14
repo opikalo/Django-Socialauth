@@ -1,38 +1,41 @@
-{% extends 'socialauth/base.html' %}
+{% extends 'pending485_base.html' %}
 {% load media %}
 
-{% block html_declare %}
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+{% block intro %}
 {% endblock %}
 
-{% block extra_head %}
-  <!-- Simple OpenID Selector -->
+{% block page-heading %} log in to start I485 Application Tracking {% endblock %}
 
-  {% include_media 'openid_main.css' %}
-  <!-- link rel="stylesheet" href="{{ MEDIA_URL }}css/openid.css" /> -->
-
-  <!--<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>-->
-
-  {% include_media 'socialauth_main.js' %}
-  <!-- script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-1.2.6.min.js"></script> -->
-  <!-- script type="text/javascript" src="{{ MEDIA_URL }}js/openid-jquery.js"></script> -->
-
-  <script type="text/javascript">
-	$(document).ready(function() {
-	  openid.init('openid_identifier');
-	});
-	//function facebook_onlogin(){
-    //  window.location = "{% url socialauth_facebook_login_done %}"
-	//}
-  </script>
-  <!-- /Simple OpenID Selector -->
+{% block navigate %}
 {% endblock %}
 
-{% block extra_body %}
-{{ block.super }}
-
+{% block title %}
+Log in into Realtime Application Tracking
 {% endblock %}
 
-{% block main_content %}
-{% include 'socialauth/embedded_login.html' %}
+{% block realtime_report %}
+<div class="grid_7">
+  <div class="box">
+    <h2>
+      <a href="#" id="toggle-tables">Why do I have to log in?</a>
+    </h2>
+    <div class="block" id="tables">
+      <fieldset>
+	<legend>What is OpenID?</legend>
+	<p>We simply would like to make sure that you are real human. OpenID allows you to use an existing account to sign in, without needing to create new passwords.</p>
+	<p>You may choose to associate information with your OpenID that can be shared with us, such as a name or email address. You remain in control how much of that information is shared.</p>
+	<li>It’s a single username and password that allows you to log in to any OpenID-enabled site.</li>
+
+	<li>It works on thousands of websites.</li>
+
+	<li>It’s an open standard.</li>
+
+	<li>It's hard to keep up with so many usernames and passwords!</li>
+	<br>
+	<a href="http://openid.net/get-an-openid/what-is-openid/">learn more »</a>
+      </fieldset>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
