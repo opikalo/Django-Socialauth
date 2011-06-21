@@ -11,6 +11,8 @@ class AuthMeta(models.Model):
     is_email_filled = models.BooleanField(default=False)
     is_profile_modified = models.BooleanField(default=False)
 
+    terms_OK = models.BooleanField(default=False)
+
 class OpenidProfile(models.Model):
     """A class associating an User to a Openid"""
     openid_key = models.CharField(max_length=200, unique=True, db_index=True)

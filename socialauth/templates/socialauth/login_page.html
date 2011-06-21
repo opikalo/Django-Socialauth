@@ -13,6 +13,11 @@
 Log in into Realtime Application Tracking
 {% endblock %}
 
+
+{% block embedded_content %}
+{% include 'socialauth/embedded_login.html' %}
+{% endblock %}
+
 {% block realtime_report %}
 <div class="grid_7">
   <div class="box">
