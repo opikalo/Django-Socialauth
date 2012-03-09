@@ -263,7 +263,7 @@ def editprofile(request):
         if edit_form.is_valid():
             user = edit_form.save()
             try:
-                for authmeta in user.authmeta_set:
+                for authmeta in user.authmeta_set.get(user=user):
                     authmeta.is_profile_modified = True
                     authmeta.save()
             except AuthMeta.DoesNotExist:

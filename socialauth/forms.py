@@ -51,7 +51,7 @@ class EditProfileForm(forms.Form):
             user.set_password(self.cleaned_data['password'])
         user.save()
         try:
-            for authmeta in user.authmeta_set:
+            for authmeta in user.authmeta_set.get(user=user):
                 authmeta.is_email_filled = True
                 authmeta.is_profile_modified = True
                 authmeta.save()
